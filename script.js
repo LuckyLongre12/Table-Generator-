@@ -1,4 +1,5 @@
 function Generate() {
+    console.log(1+2);
     let num = document.getElementById("num").value;
     let tableContainer = document.getElementById("multiplicationTable");
 
