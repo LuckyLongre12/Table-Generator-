@@ -4,17 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiplication Table Generator</title>
-    <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e1e2e;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    background-color: #282a36;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: #3a3b4e;
+    color: white;
+    border: 2px solid #555;
+    border-radius: 8px;
+    outline: none;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 12px;
+    background-color: #ff5722;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.top {
+    padding: 15px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    background-color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    input, button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .top {
+        font-size: 1.2rem;
+    }
+    }
+</style>
 <body>
     <div class="container">
-        <h1>Table Generator</h1>
+        <h1>Multiplication Table Generator</h1>
         <input type="number" id="num" placeholder="Enter a Number" min="1" />
-        <button id="generateBtn">Generate Table</button>
-        <div class="table-container">
-            <table id="multiplicationTable"></table>
-        </div>
+        <button id="generateBtn">Generate</button>
+        <div class="main" id="output"></div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        document.getElementById("generateBtn").addEventListener("click", function () {
+    let num = document.getElementById("num").value;
+    let outputDiv = document.getElementById("output");
+
+    if (num === "" || num <= 0) {
+        alert("Please enter a valid number greater than 0.");
+        return;
+    }
+
+    outputDiv.innerHTML = ""; // Clear previous output
+
+    for (let i = 1; i <= 10; i++) {
+        let result = document.createElement("h1");
+        result.classList.add("top");
+        result.textContent = `${num} × ${i} = ${num * i}`;
+        outputDiv.appendChild(result);
+    }
+});
+    </script>
 </body>
 </html>
