@@ -1,5 +1,4 @@
-function Generate() {
-    console.log(1+2);
+document.getElementById("generateBtn").addEventListener("click", function () {
     let num = document.getElementById("num").value;
     let tableContainer = document.getElementById("multiplicationTable");
 
@@ -15,4 +14,4 @@ function Generate() {
         let cell = row.insertCell();
         cell.textContent = `${num} × ${i} = ${num * i}`;
     }
-}
+});
