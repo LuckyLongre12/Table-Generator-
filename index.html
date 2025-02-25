@@ -3,45 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Generator</title>
+    <title>Multiplication Table Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <input placeholder="Enter Your Number" type="number" id="num" />
-        <button onclick="Generate()">Generate</button>
-    
-        <div class="main">
-            <div class="top">
-                <h1 class="txt1"></h1>
-            </div>
-            <div class="top">
-                <h1 class="txt2"></h1>
-            </div>
-            <div class="top">
-                <h1 class="txt3"></h1>
-            </div>
-            <div class="top">
-                <h1 class="txt4"></h1>
-            </div>
-            <div class="top">
-                <h1 class="txt5"></h1>
-            </div>
-            <div class="top">
-                <h1 class="txt6"></h1>
-            </div>
-            <div class="top">
-                <h1 class="txt7"></h1>
-            </div>
-            <div class="top">
-                <h1 class="txt8"></h1>
-            </div>
-            <div class="top">
-                <h1 class="txt9"></h1>
-            </div>
-            <div class="top">
-                <h1 class="txt10"></h1>
-            </div>
+        <h1>Table Generator</h1>
+        <input type="number" id="num" placeholder="Enter a Number" min="1" />
+        <button onclick="Generate()">Generate Table</button>
+        <div class="table-container">
+            <table id="multiplicationTable"></table>
         </div>
     </div>
     <script src="script.js"></script>
