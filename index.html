@@ -76,6 +76,7 @@ button:hover {
 }
 
 .top {
+    margin: 10px;
     padding: 15px;
     border: 2px solid #444;
     border-radius: 8px;
@@ -122,7 +123,7 @@ button:hover {
     for (let i = 1; i <= 10; i++) {
         let result = document.createElement("h1");
         result.classList.add("top");
-        result.textContent = `${num} × ${i} = ${num * i}`;
+        result.textContent = `${num * i}`;
         outputDiv.appendChild(result);
     }
 });
